@@ -24,6 +24,8 @@ contract SupplyChain is AccessControlEnumerableUpgradeable, ERC20Upgradeable {
     /// @dev Fungible token symbol
     string private constant _symbol = "WID";
 
+    uint256 public price;
+
     /*///////////////////////////////////////////////////////////////
                     Constructor + initializer logic
     //////////////////////////////////////////////////////////////*/
@@ -41,7 +43,14 @@ contract SupplyChain is AccessControlEnumerableUpgradeable, ERC20Upgradeable {
     /*///////////////////////////////////////////////////////////////
                         Generic contract logic
     //////////////////////////////////////////////////////////////*/
-    function addStock() public onlyRole(WAREHOUSE_MANAGER_ROLE) {
+    
+    /// @dev Add stock to inventory
+    function addStock(uint256 amount) public onlyRole(WAREHOUSE_MANAGER_ROLE) {
+        _mint(address(this), amount);
+    }
 
+    /// @dev Set widget price
+    function setPrice(uint256 _price) public onlyRole(WAREHOUSE_MANAGER_ROLE) {
+        price = _price;
     }
 }
