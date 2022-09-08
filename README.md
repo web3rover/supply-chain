@@ -1,14 +1,10 @@
-# Sample Hardhat Project
+# Supply Chain Management
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
+This project demonstrates creating a Supply Chain on blockchain. 
 
-Try running some of the following tasks:
+To run the tests using the following commands:
 
 ```shell
-npx hardhat help
+npm install
 npx hardhat test
-GAS_REPORT=true npx hardhat test
-npx hardhat node
-npx hardhat run scripts/deploy.ts
 ```
-# supply-chain
